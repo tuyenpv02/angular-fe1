@@ -1,0 +1,31 @@
+
+<div class="d-flex justify-content-between m-2">
+  <h2 class="">champs {{price}} lmht {{name}}</h2>
+  <a class="btn btn-primary" href="javascript:;">add champ</a>
+</div>
+  <table class="table">
+    <thead>
+      <tr class="border-blue">
+        <th >name</th>
+        <th>dame</th>
+        <th>defend</th>
+        <th>speed</th>
+        <th>price</th>
+        <th>img</th>
+        <th>action</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let champ of champs">
+      <tr >
+        <td>{{champ.name}}</td>
+        <td>{{champ.dame}}</td>
+        <td>{{champ.defend}}</td>
+        <td>{{champ.speed}}</td>
+        <td>{{champ.price}}</td>
+        <td><img [src]="champ.img" alt={{champ.name}} height="50" ></td>
+        <td>
+          <button class="btn btn-success">delete</button>  
+        </td>
+      </tr>
+    </tbody>
+  </table>
