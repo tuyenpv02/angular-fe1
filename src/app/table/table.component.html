@@ -1,13 +1,68 @@
 
 <div class="d-flex justify-content-between m-2">
-  <h2 class="">champs {{price}} lmht {{name}}</h2>
-  <a class="btn btn-primary" href="javascript:;">add champ</a>
+  <h2 class="">sự kiện lmht {{name}} - {{price}}  </h2>
+  <button class="btn btn-primary" (click)="onClickBtn()">
+    {{showStatus?'Ẩn':'Hiện'}} bảng dữ liệu
+    </button>
+</div>
+<div>
+  <!-- <form action="" > -->
+    <div class="row m-2">
+      <div class="col-6 ">
+        <label for="input" class="form-label">Name: </label>
+        <input type="text" id="input" class="form-control"
+         (input)="onInput($event, 'name')"
+         [value]="formChamp.name">
+      </div>
+      <div class="col-6">
+        <label for="input" class="form-label" >Dame: </label>
+        <input type="number" id="input" class="form-control" 
+        (input)="onInput($event,'dame')"
+        [value]="formChamp.dame">
+      </div>
+    </div>
+   <div class="row m-2">
+    <div class="col-6">
+      <label for="input" class="form-label">Defend: </label>
+      <input type="number" id="input" class="form-control" 
+      (input)="onInput($event,'defend')"
+      [value]="formChamp.defend">
+    </div>
+    <div class="col-6">
+      <label for="input" class="form-label">Speed: </label>
+      <input type="number" id="input" class="form-control" 
+      (input)="onInput($event,'speed')"
+      [value]="formChamp.speed">
+    </div>
+   </div>
+   <div class="row m-2">
+    <div class="col-6">
+      <label for="input" class="form-label" >Price: </label>
+      <input type="number" id="input" class="form-control" 
+      (input)="onInput($event,'price')"
+      [value]="formChamp.price">
+    </div>
+    <div class="col-6">
+      <label for="input" class="form-label">Image: </label>
+      <input type="text" id="input" class="form-control" 
+      [value]="formChamp.img" 
+      (input)="onInput($event,'img')">
+    </div>
+   </div>
+    <div class="m-3">
+      <button class="btn btn-primary mx-2" (click)="onSubmit()">Submit</button>
+      <button class="btn btn-primary" *ngIf="checkEdit"
+       (click)="onUpdate()">Update</button>
+    </div>
+  <!-- </form> -->
 </div>
 
+<div *ngIf="showStatus" class="m-3">
   <table class="table">
     <thead>
       <tr class="border-blue">
-        <th >name12</th>
+        <th>STT</th>
+        <th class="color-blue">name12</th>
         <th>dame</th>
         <th>defend</th>
         <th>speed</th>
@@ -16,17 +71,20 @@
         <th>action</th>
       </tr>
     </thead>
-    <tbody *ngFor="let champ of champs">
+    <tbody *ngFor="let champ of champs, index as i">
       <tr >
-        <td>{{champ.name}}</td>
+        <td>{{i + 1}}</td>
+        <td >{{champ.name}}</td>
         <td>{{champ.dame}}</td>
         <td>{{champ.defend}}</td>
         <td>{{champ.speed}}</td>
         <td>{{champ.price}}</td>
         <td><img [src]="champ.img" alt={{champ.name}} height="50" ></td>
         <td>
-          <button class="btn btn-success">delete</button>  
+          <button class="btn btn-success m-2">delete</button>  
+          <a class="btn btn-primary m-2" (click)="detail(i)">detail</a>
         </td>
       </tr>
     </tbody>
   </table>
+</div>
