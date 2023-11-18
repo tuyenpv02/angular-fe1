@@ -1,0 +1,66 @@
+<!-- userForm là 1 thể hiện của ngForm và sẽ quản lý,
+     lắng nghe thay đổi form đặt vào -->
+     <p>{{inputUser | json}}</p>
+     <p>{{userForm.value | json}}</p>
+<form   #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+    <div class="form-group">
+        <label for="">Tên user </label>
+        <input type="text" 
+        class="form-control"
+        name="name" 
+        [(ngModel)]="inputUser.name" 
+        required
+        minlength="6"
+        maxlength="10"
+        #nameU="ngModel"
+        >
+        <app-show-validate [field]="nameU" key="Tên"></app-show-validate>
+    </div>
+    <!-- End form name  -->
+    <div class="form-group">
+        <label for="">Tuổi user </label>
+        <input type="number" 
+        class="form-control"
+        name="age" 
+        [(ngModel)]="inputUser.age" 
+        required
+        min="1"
+        max="100"
+        #age="ngModel"
+        >
+        <app-show-validate [field]="age" key="Tuổi"></app-show-validate>
+    </div>
+    <!-- End form age -->
+    <div >
+        <button class="btn btn-success" >submit</button>
+    </div>
+</form>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>stt</th>
+                <th>id</th>
+                <th>name</th>
+                <th>age</th>
+                <th>email</th>
+                <th>img</th>
+                <th>email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users, index as i">
+                <td>{{i + 1}}</td>
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.age}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.name}}</td>
+                <td>
+                    <a class="btn btn-primary mx-2">detail</a>
+                    <a (click)="deleteUser(i)" class="btn btn-primary mx-2">xóa</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

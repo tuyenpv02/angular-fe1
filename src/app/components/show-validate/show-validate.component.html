@@ -1,0 +1,14 @@
+<!-- check lỗi -->
+        <!-- + valid: hợp lệ, khả thi
+             + dirty: nếu chưa nhập thì false, nếu đã thao tác thì return true
+             + tounched: trong mobile nếu chạm vào thì trả về true -->
+<div *ngIf="field.valid || field.dirty || field.touched">
+
+    <span *ngIf="field.errors?.['required']" class="text-danger">{{key}} bắt buộc nhập</span>
+    <span *ngIf="field.errors?.['minlength']" class="text-danger">{{key}} tối thiểu {{field.errors?.['minlength'].requiredLength}} ký tự</span>
+    <span *ngIf="field.errors?.['maxlength']" class="text-danger">{{key}} tối đa {{field.errors?.['maxlength'].requiredLength}} ký tự</span>
+
+    <span *ngIf="field.errors?.['max']" class="text-danger">{{key}} tối đa là {{field.errors?.['max'].max}}</span>
+    <span *ngIf="field.errors?.['min']" class="text-danger">{{key}} tối thiểu là {{field.errors?.['min'].min}}</span>
+
+</div>
