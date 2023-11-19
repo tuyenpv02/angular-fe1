@@ -8,10 +8,10 @@ import { TableComponent } from './table/table.component';
 import { ChampComponent } from './champ/champ.component';
 import { FormComponent } from './form/form.component';
 import { ShowValidateComponent } from './components/show-validate/show-validate.component';
-import { UserListComponent } from './users/user-list/user-list.component';
-import { UserFormComponent } from './users/user-form/user-form.component';
-import { UserComponent } from './users/user/user.component';
-import { AboutClientComponent } from './about-client/about-client.component';
+import { UserListComponent } from './pages/users/user-list/user-list.component';
+import { UserFormComponent } from './pages/users/user-form/user-form.component';
+import { UserComponent } from './pages/users/user/user.component';
+import { AboutClientComponent } from './pages/about-client/about-client.component';
 import { ProductClientComponent } from './product-client/product-client.component';
 import { ProductDetailClientComponent } from './product-detail-client/product-detail-client.component';
 import { LayoutClientComponent } from './layout/layout-client/layout-client.component';
@@ -19,6 +19,7 @@ import { LayoutAdminComponent } from './layout/layout-admin/layout-admin.compone
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     LayoutAdminComponent,
     HeaderComponent,
     FooterComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
