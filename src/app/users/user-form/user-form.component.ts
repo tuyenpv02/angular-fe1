@@ -16,10 +16,15 @@ export class UserFormComponent {
   constructor(){
     this.handleSubmit = new EventEmitter();
   }
-  
+
   onSubmit(userForm: NgForm){
     // bắn dữ liệu, tương tự input nhưng ngược lại
+    if(!userForm.valid){
+      alert('nhập lại form');
+      return;
+    }
     this.handleSubmit.emit(userForm.value);
+    userForm.resetForm({id:0, name:'', age:''});
   }
   
 }

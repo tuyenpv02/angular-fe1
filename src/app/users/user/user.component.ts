@@ -18,9 +18,21 @@ export class UserComponent {
     age:0
   };
 
-  onCreateUser(event: any){
-    console.log(event);
-    // this.users.push(event)
+  onCreateUser(userForm: any){
+    
+    if(userForm.id === 0){
+      const newUsersId = this.users.map((u) => u.id).sort((a, b)=> b - a); 
+      const idMax = newUsersId[0];
+      console.log(idMax);
+      
+       this.users.push({
+        ...userForm,
+        id: idMax +1
+      });
+      return ;
+    }
+    //Chỉnh sửa
+
   }
 
   onEdit(userId: number){
@@ -32,8 +44,9 @@ export class UserComponent {
 
   onDelete(userId: number){
     if(!confirm('you want to delete ')) return;
-    const idDelete = this.users.findIndex(user =>user.id === userId);
-    this.users.splice(idDelete,1);
+    this.users = this.users.filter(user => user.id !== userId);
+    // const idDelete = this.users.findIndex(user =>user.id === userId);
+    // this.users.splice(idDelete,1);
   }
   
 }

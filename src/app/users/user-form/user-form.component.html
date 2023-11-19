@@ -34,7 +34,7 @@
     </div>
     <!-- End form age -->
     <div >
-        <button *ngIf="inputUser.id==0" (click)="onSubmit(userForm)" class="btn btn-success" >add</button> 
-        <button *ngIf="inputUser.id!=0" (click)="onSubmit(userForm)"  class="btn btn-success" >update</button>
+        <button (click)="onSubmit(userForm)" class="btn btn-success" >add</button> 
+        <button  (click)="onSubmit(userForm)"  class="btn btn-success" >update</button>
     </div>
 </form>

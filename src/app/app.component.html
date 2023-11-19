@@ -1,12 +1,14 @@
+<!-- <nav>
+  <ul>
+    <li><a routerLink="/">Home</a></li>
+    <li><a routerLink="/champ">champ</a></li>
+    <li><a routerLink="/product-detail">product detail</a></li>
+    <li><a routerLink="/about">about</a></li>
+  </ul>
+</nav> -->
 
 
-
-<div class="container">
-  <div>
-    <p>Angular form</p>
-    <app-user></app-user>
-  </div>
-  <hr><hr>
-  <app-table [name]="title" [price]="3200" [champions]="champs"></app-table>
-</div>
+<!-- đây là phần được render component từ router -->
 <router-outlet></router-outlet>
+  
+  <!-- <app-table [name]="title" [price]="3200" [champions]="champs"></app-table> -->

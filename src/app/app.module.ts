@@ -11,6 +11,14 @@ import { ShowValidateComponent } from './components/show-validate/show-validate.
 import { UserListComponent } from './users/user-list/user-list.component';
 import { UserFormComponent } from './users/user-form/user-form.component';
 import { UserComponent } from './users/user/user.component';
+import { AboutClientComponent } from './about-client/about-client.component';
+import { ProductClientComponent } from './product-client/product-client.component';
+import { ProductDetailClientComponent } from './product-detail-client/product-detail-client.component';
+import { LayoutClientComponent } from './layout/layout-client/layout-client.component';
+import { LayoutAdminComponent } from './layout/layout-admin/layout-admin.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +29,15 @@ import { UserComponent } from './users/user/user.component';
     ShowValidateComponent,
     UserListComponent,
     UserFormComponent,
-    UserComponent
+    UserComponent,
+    AboutClientComponent,
+    ProductClientComponent,
+    ProductDetailClientComponent,
+    LayoutClientComponent,
+    LayoutAdminComponent,
+    HeaderComponent,
+    FooterComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
