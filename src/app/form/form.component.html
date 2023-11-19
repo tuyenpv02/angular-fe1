@@ -2,16 +2,18 @@
      lắng nghe thay đổi form đặt vào -->
      <p>{{inputUser | json}}</p>
      <p>{{userForm.value | json}}</p>
-<form   #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+     <!-- (ngSubmit)="onSubmit(userForm)" -->
+<form   #userForm="ngForm" >
+    <input type="text" name="id" [(ngModel)]="inputUser.id">
     <div class="form-group">
         <label for="">Tên user </label>
         <input type="text" 
         class="form-control"
         name="name" 
-        [(ngModel)]="inputUser.name" 
+        [ngModel]="inputUser.name" 
         required
-        minlength="6"
-        maxlength="10"
+        minlength="2"
+        maxlength="15"
         #nameU="ngModel"
         >
         <app-show-validate [field]="nameU" key="Tên"></app-show-validate>
@@ -22,7 +24,7 @@
         <input type="number" 
         class="form-control"
         name="age" 
-        [(ngModel)]="inputUser.age" 
+        [ngModel]="inputUser.age" 
         required
         min="1"
         max="100"
@@ -32,7 +34,8 @@
     </div>
     <!-- End form age -->
     <div >
-        <button class="btn btn-success" >submit</button>
+        <button *ngIf="inputUser.id==0" (click)="onSubmit(userForm, 'add')" class="btn btn-success" >add</button> 
+        <button *ngIf="inputUser.id!=0" (click)="onSubmit(userForm, 'update')"  class="btn btn-success" >update</button>
     </div>
 </form>
 <div>
@@ -54,10 +57,10 @@
                 <td>{{user.id}}</td>
                 <td>{{user.name}}</td>
                 <td>{{user.age}}</td>
-                <td>{{user.name}}</td>
-                <td>{{user.name}}</td>
+                <td> - </td>
+                <td> - </td>
                 <td>
-                    <a class="btn btn-primary mx-2">detail</a>
+                    <a (click)="editUser(i)" class="btn btn-primary mx-2">detail</a>
                     <a (click)="deleteUser(i)" class="btn btn-primary mx-2">xóa</a>
                 </td>
             </tr>
