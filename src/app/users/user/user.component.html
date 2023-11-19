@@ -1,0 +1,11 @@
+
+<app-user-form [users]="users" 
+    [inputUser]="formValue"
+    (handleSubmit)="onCreateUser($event)"
+
+></app-user-form>
+<app-user-list 
+    [users]="users" 
+    (handleEdit)="onEdit($event)"
+    (handleRemove)="onDelete($event)"
+></app-user-list>

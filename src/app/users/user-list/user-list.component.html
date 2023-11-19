@@ -1,0 +1,30 @@
+
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>stt</th>
+                <th>id</th>
+                <th>name</th>
+                <th>age</th>
+                <th>email</th>
+                <th>img</th>
+                <th>email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users, index as i">
+                <td>{{i + 1}}</td>
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.age}}</td>
+                <td> - </td>
+                <td> - </td>
+                <td>
+                    <a (click)="onEdit(user.id)" class="btn btn-primary mx-2">detail</a>
+                    <a (click)="onRemove(user.id)" class="btn btn-primary mx-2">xóa</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

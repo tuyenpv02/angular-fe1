@@ -3,7 +3,7 @@
      <p>{{inputUser | json}}</p>
      <p>{{userForm.value | json}}</p>
      <!-- (ngSubmit)="onSubmit(userForm)" -->
-<form   #userForm="ngForm" >
+<form #userForm="ngForm" >
     <input type="text" name="id" [(ngModel)]="inputUser.id">
     <div class="form-group">
         <label for="">Tên user </label>

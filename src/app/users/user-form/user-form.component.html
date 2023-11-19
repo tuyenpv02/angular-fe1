@@ -1,0 +1,40 @@
+<!-- userForm là 1 thể hiện của ngForm và sẽ quản lý,
+     lắng nghe thay đổi form đặt vào -->
+     <p>{{inputUser | json}}</p>
+     <p>{{userForm.value | json}}</p>
+     <!-- (ngSubmit)="onSubmit(userForm)" -->
+<form #userForm="ngForm" >
+    <input type="text" name="id" [(ngModel)]="inputUser.id">
+    <div class="form-group">
+        <label for="">Tên user </label>
+        <input type="text" 
+        class="form-control"
+        name="name" 
+        [(ngModel)]="inputUser.name" 
+        required
+        minlength="2"
+        maxlength="15"
+        #nameU="ngModel"
+        >
+        <app-show-validate [field]="nameU" key="Tên"></app-show-validate>
+    </div>
+    <!-- End form name  -->
+    <div class="form-group">
+        <label for="">Tuổi user </label>
+        <input type="number" 
+        class="form-control"
+        name="age" 
+        [(ngModel)]="inputUser.age" 
+        required
+        min="1"
+        max="100"
+        #age="ngModel"
+        >
+        <app-show-validate [field]="age" key="Tuổi"></app-show-validate>
+    </div>
+    <!-- End form age -->
+    <div >
+        <button *ngIf="inputUser.id==0" (click)="onSubmit(userForm)" class="btn btn-success" >add</button> 
+        <button *ngIf="inputUser.id!=0" (click)="onSubmit(userForm)"  class="btn btn-success" >update</button>
+    </div>
+</form>
