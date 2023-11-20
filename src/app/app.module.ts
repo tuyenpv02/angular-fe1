@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
 import { FormsModule } from '@angular/forms'; // thêm thư viện để sử dụng form
+import { ReactiveFormsModule } from '@angular/forms';
 // đây là module cung cấp các phương thức để component gọi API
 import {HttpClientModule} from '@angular/common/http'
 
@@ -22,10 +24,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HomeComponent } from './pages/home/home.component';
-import { AdminProductsComponent } from './pages/admin/admin-products/admin-products.component';
-import { AdminProductDetailComponent } from './pages/admin/admin-product-detail/admin-product-detail.component';
-import { AdminProductAddComponent } from './pages/admin/admin-product-add/admin-product-add.component';
-import { AdminProductEditComponent } from './pages/admin/admin-product-edit/admin-product-edit.component';
+import { AdminProductsComponent } from './pages/admin/product/admin-products/admin-products.component';
+import { AdminProductDetailComponent } from './pages/admin/product/admin-product-detail/admin-product-detail.component';
+import { AdminProductAddComponent } from './pages/admin/product/admin-product-add/admin-product-add.component';
+import { AdminProductEditComponent } from './pages/admin/product/admin-product-edit/admin-product-edit.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { AdminCustomersComponent } from './pages/admin/admin-customers/admin-customers.component';
 
@@ -52,12 +54,13 @@ import { AdminCustomersComponent } from './pages/admin/admin-customers/admin-cus
     AdminProductAddComponent,
     AdminProductEditComponent,
     DashboardComponent,
-    AdminCustomersComponent
+    AdminCustomersComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
+    FormsModule, // template-driven 
+    ReactiveFormsModule, // reactive forms
     HttpClientModule
   ],
   providers: [],

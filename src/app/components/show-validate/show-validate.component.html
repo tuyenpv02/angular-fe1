@@ -2,7 +2,7 @@
         <!-- + valid: hợp lệ, khả thi
              + dirty: nếu chưa nhập thì false, nếu đã thao tác thì return true
              + tounched: trong mobile nếu chạm vào thì trả về true -->
-<div *ngIf="field.valid || field.dirty || field.touched">
+<div *ngIf="field.invalid && (field.dirty || field.touched)">
 
     <span *ngIf="field.errors?.['required']" class="text-danger">{{key}} bắt buộc nhập</span>
     <span *ngIf="field.errors?.['minlength']" class="text-danger">{{key}} tối thiểu {{field.errors?.['minlength'].requiredLength}} ký tự</span>

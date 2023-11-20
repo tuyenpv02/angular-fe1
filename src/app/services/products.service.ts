@@ -18,6 +18,11 @@ export class ProductsService {
   getProducts():Observable<Product[]>{
     return this.http.get<Product[]>(this.API);
   }
+  getProductById(id:string):Observable<Product>{
+    return this.http.get<Product>(`${this.API}/${id}`);
+  }
 
-
+  deleteProduct(id: string|number):Observable<any>{
+    return this.http.delete(`${this.API}/${id}`);
+  }
 }
