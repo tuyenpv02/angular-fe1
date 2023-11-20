@@ -1,0 +1,20 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>maKhachHang</th>
+            <th>tenKhachHang</th>
+            <th>soDienThoai</th>
+            <th>gioiTinh</th>
+            <th>hangKhachHang</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of customers">
+            <td>{{p.maKhachHang}}</td>
+            <td>{{p.tenKhachHang}}</td>
+            <td>{{p.soDienThoai}}</td>
+            <td>{{p.gioiTinh ?'Nam':'Nữ'}}</td>
+            <td>{{p.hangKhachHang.tenHang}}</td>
+        </tr>
+    </tbody>
+</table>

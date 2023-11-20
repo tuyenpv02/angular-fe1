@@ -57,8 +57,13 @@
   <!-- </form> -->
 </div>
 
-<div *ngIf="showStatus" class="m-3">
-  <table class="table">
+<div *ngIf="showStatus" class="datatable-wrapper datatable-loading no-footer sortable searchable fixed-columns">
+  
+  <div class="datatable-container">
+
+  </div>
+
+  <table class="datatable-table">
     <thead>
       <tr class="border-blue">
         <th>STT</th>
