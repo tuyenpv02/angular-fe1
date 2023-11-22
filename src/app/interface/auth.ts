@@ -6,6 +6,7 @@ export interface typeLogin {
 export interface typeLoginResponse {
     accessToken: string,
     user: {
+        id:number,
         email: string
     }
 }

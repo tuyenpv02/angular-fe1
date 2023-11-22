@@ -63,7 +63,7 @@ import { LoginComponent } from './pages/auth/login/login.component';
     AppRoutingModule,
     FormsModule, // template-driven 
     ReactiveFormsModule, // reactive forms
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

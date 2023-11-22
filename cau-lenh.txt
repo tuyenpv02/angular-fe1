@@ -4,4 +4,6 @@
 - trong file db.json thêm mảng "users", có 1 pt với email và password(password đc mã hóa bcrypt)
 - chạy câu lệnh: "json-server db.json -m node_modules/json-server-auth
 
+--tạo ra lớp bảo về cho router
+- ng g guard guards/can-access-admin
 

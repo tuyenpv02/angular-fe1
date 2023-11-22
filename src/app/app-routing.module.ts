@@ -13,14 +13,15 @@ import { AdminProductAddComponent } from './pages/admin/product/admin-product-ad
 import { AdminProductEditComponent } from './pages/admin/product/admin-product-edit/admin-product-edit.component';
 import { AdminCustomersComponent } from './pages/admin/admin-customers/admin-customers.component';
 import { LoginComponent } from './pages/auth/login/login.component';
+import { canAccessAdminGuard } from './guards/can-access-admin.guard';
 
 const routes: Routes = [
   {
     path:'',
     component:LayoutClientComponent,
     children:[
-      // {path:'', redirectTo: 'home', pathMatch:'full'},
-      {path:'', component: HomeComponent},
+      {path:'', redirectTo: 'home', pathMatch:'full'},
+      {path:'home', component: HomeComponent},
       {path:'products', component: ProductClientComponent},
       {path:'about', component: AboutClientComponent}
     ]
@@ -28,6 +29,7 @@ const routes: Routes = [
   {
     path:'admin',
     component:LayoutAdminComponent,
+    canActivate: [canAccessAdminGuard], // chặn login
     children:[
       {path:'',redirectTo:'dashboard', pathMatch:'full'},
       {path:'dashboard',component:TableComponent},
@@ -56,6 +58,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }
