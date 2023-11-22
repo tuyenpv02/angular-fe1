@@ -27,7 +27,8 @@ export class AdminProductsComponent {
 
   // Xóa theo id
   onDelete(id:number){
-    if(confirm('bạn muốn xóa không?') && id){
+    const check  = confirm('bạn muốn xóa không?');
+    if(check && id){
       // nếu có id thì xóa
       this.productServices.deleteProduct(id).subscribe({
         next:(data)=>{console.log(data);

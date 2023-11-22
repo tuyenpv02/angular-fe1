@@ -16,6 +16,7 @@
             <td>{{p.name}}</td>
             <td>
                 <a routerLink="/admin/products/detail/{{p.id}}" class="btn btn-primary mx-2">detail</a>
+                <a routerLink="/admin/products/edit/{{p.id}}" class="btn btn-warning mx-2">edit</a>
                 <button (click)="onDelete(p.id)" class="btn btn-primary mx-2">xóa</button>
             </td>
         </tr>

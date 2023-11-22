@@ -12,6 +12,7 @@ import { AdminProductDetailComponent } from './pages/admin/product/admin-product
 import { AdminProductAddComponent } from './pages/admin/product/admin-product-add/admin-product-add.component';
 import { AdminProductEditComponent } from './pages/admin/product/admin-product-edit/admin-product-edit.component';
 import { AdminCustomersComponent } from './pages/admin/admin-customers/admin-customers.component';
+import { LoginComponent } from './pages/auth/login/login.component';
 
 const routes: Routes = [
   {
@@ -33,9 +34,17 @@ const routes: Routes = [
       {path:'products',component:AdminProductsComponent},
       {path:'products/detail/:id',component:AdminProductDetailComponent},
       {path:'products/create',component:AdminProductAddComponent},
-      {path:'products/edti/:id',component:AdminProductEditComponent},
+      {path:'products/edit/:id',component:AdminProductEditComponent},
       {path:'customers',component:AdminCustomersComponent},
-      
+    ]
+  },
+  {
+    path:'auth',
+    children:[
+      {
+        path:'login',
+        component: LoginComponent
+      }
     ]
   },
   {

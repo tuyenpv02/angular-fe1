@@ -1,4 +1,9 @@
 export interface IProduct {
-    id:number;
+    id?:number|string;
+    name?:string;
+}
+
+export interface IProductCreate {
     name:string;
 }
+

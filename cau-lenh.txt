@@ -1,0 +1,7 @@
+
+--json-server-auth:
+- Cài đặt npm i json-server-auth
+- trong file db.json thêm mảng "users", có 1 pt với email và password(password đc mã hóa bcrypt)
+- chạy câu lệnh: "json-server db.json -m node_modules/json-server-auth
+
+

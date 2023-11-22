@@ -1,1 +1,15 @@
-<p>admin-product-edit works!</p>
+<div>
+    <a routerLink="/admin/products" class="btn btn-primary">quay lại</a>
+</div>
+<!-- Định nghĩa xem form đc quản lý bởi biến nào -->
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div class="">
+        <label for="">Name </label>
+        <!-- Định nghĩa input sẽ đc quản lý bởi key bằng formControlName -->
+        <input type="text" class="form-control" formControlName="name">
+        <app-show-validate [field]="productForm.get('name')" key="Tên sản phẩm"></app-show-validate>
+    </div>
+    <div>
+        <button [disabled]="!productForm.valid" class="btn btn-primary">update</button>
+    </div>
+</form>

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IProduct } from '../interface/IProduct';
+import { IProduct, IProductCreate } from '../interface/IProduct';
 import { Product } from '../types/Product';
 
 @Injectable({
@@ -24,5 +24,17 @@ export class ProductsService {
 
   deleteProduct(id: string|number):Observable<any>{
     return this.http.delete(`${this.API}/${id}`);
+  }
+
+  createProduct(product: IProductCreate): Observable<IProduct>{
+    return this.http.post<IProduct>(`${this.API}`, product);
+  }
+
+  editProduct(product: IProduct, id:string): Observable<IProduct>{
+    return this.http.put<IProduct>(`${this.API}/${product.id}`, product);
+  }
+
+  editProduct2(product:IProduct):Observable<IProduct>{
+    return this.http.put<IProduct>(`${this.API}/${product.id}`, product);
   }
 }

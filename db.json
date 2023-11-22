@@ -9,8 +9,14 @@
       "name": "san pham 2"
     },
     {
-      "id": 5,
-      "name": "san pham 6"
+      "id": 7,
+      "name": "tuyên phạm văn 123"
+    }
+  ],
+  "users":[
+    {
+      "email":"admin@gmail.com",
+      "password":"$2a$12$FBoCr5eoEI83NkxIuwgwh.9UzrLgIqGBV8YHaQDhmr1bLv6W9Athi"
     }
   ]
 }
